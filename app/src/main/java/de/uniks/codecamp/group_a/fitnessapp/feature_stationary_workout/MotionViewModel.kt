@@ -16,7 +16,7 @@ enum class State {
 
 @HiltViewModel
 class MotionViewModel @Inject constructor(
-    val accSensor: AccelerationSensor
+    val accelerometer: Accelerometer
 ): ViewModel() {
 
     var state by mutableStateOf(State.START)
@@ -30,7 +30,7 @@ class MotionViewModel @Inject constructor(
     var repititions by mutableStateOf(0)
 
     init {
-        accSensor.setOnValueChange { values ->
+        accelerometer.setOnValueChange { values ->
             xAcc = values[0]
             yAcc = values[1]
             zAcc = values[2]
@@ -40,11 +40,11 @@ class MotionViewModel @Inject constructor(
     }
 
     fun startOrContinue() {
-        accSensor.startListening()
+        accelerometer.startListening()
     }
 
     fun stopOrPause() {
-        accSensor.stopListening()
+        accelerometer.stopListening()
     }
 
     fun checkState() {

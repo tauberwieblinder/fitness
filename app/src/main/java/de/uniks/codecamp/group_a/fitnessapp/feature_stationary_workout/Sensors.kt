@@ -5,7 +5,7 @@ import android.content.pm.PackageManager
 import android.hardware.Sensor
 import de.uniks.codecamp.group_a.fitnessapp.feature_stationary_workout.MotionSensor
 
-class AccelerationSensor(
+class Accelerometer(
     context: Context
 ): MotionSensor(
     context = context,

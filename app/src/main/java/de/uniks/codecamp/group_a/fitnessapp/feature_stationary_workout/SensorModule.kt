@@ -5,7 +5,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import de.uniks.codecamp.group_a.fitnessapp.feature_stationary_workout.AccelerationSensor
+import de.uniks.codecamp.group_a.fitnessapp.feature_stationary_workout.Accelerometer
 import javax.inject.Singleton
 
 @Module
@@ -13,8 +13,8 @@ import javax.inject.Singleton
 object SensorModule {
     @Provides
     @Singleton
-    fun provideAccelerationSensor(app: Application): AccelerationSensor {
-        return AccelerationSensor(app)
+    fun provideAccelerometer(app: Application): Accelerometer {
+        return Accelerometer(app)
     }
 
 }
