@@ -1,4 +1,4 @@
-package de.uniks.codecamp.group_a.fitnessapp
+package de.uniks.codecamp.group_a.fitnessapp.feature_stationary_workout
 
 import android.content.Context
 import android.hardware.Sensor
