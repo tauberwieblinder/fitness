@@ -3,6 +3,8 @@ package de.uniks.codecamp.group_a.fitnessapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -15,16 +17,15 @@ import de.uniks.codecamp.group_a.fitnessapp.ui.theme.FitnessAppTheme
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    private val motionViewModel: MotionViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             FitnessAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
+                Column(modifier = Modifier.fillMaxSize()) {
+                    Text(text = "${motionViewModel.xAcc}")
+                    Text(text = "${motionViewModel.yAcc}")
+                    Text(text = "${motionViewModel.zAcc}")
                 }
             }
         }
